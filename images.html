@@ -1,0 +1,308 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .imgStyle {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+        margin: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .imgStyle:hover {
+        transform: scale(1.2);
+    }
+
+    img {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .imgStyle:hover img {
+        transform: scale(1.2);
+
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 100px;
+    }
+
+    .main {
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
+    .img_container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+        margin-left: 10px;
+        margin-bottom: 130px;
+    }
+
+    .upper_continer {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .upper_continer button {
+        height: 50px;
+        font-size: 2rem;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        transition: transform 0.3s ease-in-out;
+        border-top-right-radius: 40px;
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+
+    }
+
+    .button:active::after {
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+
+    <div class="upper_continer">
+
+        <img src="1.jpg" alt="" class="main" id="mainImage"
+            style="border: 3px solid gray; height: 500px; width: 540px;">
+        <button onclick="startSlideshow()">Start</button>
+        <button onclick="stopSlideshow()">Stop</button>
+    </div>
+    <br>
+    <div id="divId" class="img_container" onclick="changeImagesOnClick()">
+        <img id="2" class="imgStyle" src="1.jpg" alt="">
+        <img id="3" class="imgStyle" src="2.jpg" alt="">
+        <img id="4" class="imgStyle" src="3.jpg" alt="">
+        <img id="5" class="imgStyle" src="4.jpg" alt="">
+
+    </div>
+
+
+    <script>
+        var images = document.querySelectorAll('.imgStyle');
+    
+        
+        function changeImagesOnClick() {
+            var x = event.target;
+            if (x.tagName == "IMG") {
+                let a = x.getAttribute("src");
+                document.getElementById("mainImage").setAttribute("src", a);
+            }
+        }
+        
+        var intervalId;
+        var currentIndex = 0;
+
+        function startSlideshow() {
+        intervalId = setInterval(function () {
+        images[currentIndex].style.borderColor = 'gray';
+  
+        currentIndex++;
+        
+        if (currentIndex >= images.length) {
+            currentIndex = 0; 
+        }
+        images[currentIndex].style.borderColor = 'red';
+       
+        var currentImageSrc = images[currentIndex].getAttribute("src");
+
+        // Set the src attribute of the main image to the URL of the current image
+        document.getElementById("mainImage").setAttribute("src", currentImageSrc);
+
+    }, 2000);
+}
+
+        function stopSlideshow() {
+            clearInterval(intervalId);
+        }
+        
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          
+          .footer {
+            background-color: black;
+            color: #fefefe;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+          }
+          
+          .footer .heading {
+            color: #fefefe;
+            max-width: 1010px;
+            width: 90%;
+            text-transform: uppercase;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+          }
+          
+          .footer .content {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 1.5rem;
+          }
+          
+          .footer .content p {
+            margin-bottom: 1.3rem;
+          }
+          
+          .footer .content a {
+            text-decoration: none;
+            color: #fefefe;
+          }
+          
+          .footer .content a:hover {
+            border-bottom: 1px solid #971717;
+          }
+          
+          .footer .content h4 {
+            margin-bottom: 1.3rem;
+            font-size: 19px;
+          }
+          
+          footer {
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          
+          footer hr {
+            margin: 2rem 0;
+          }
+          
+          @media (max-width: 767px) {
+            .footer .content {
+              display: flex;
+              flex-direction: column;
+              font-size: 14px;
+            }
+          
+            .footer {
+              position: unset;
+            }
+          }
+          
+          @media (min-width: 768px) and (max-width: 1024px) {
+            .footer .content,
+            .footer {
+              font-size: 14px;
+            }
+          }
+          
+          @media (orientation: landscape) and (max-height: 500px) {
+            .footer {
+              position: unset;
+            }
+          }
+    </style>
+  </head>
+  <body>
+    <div class="footer">
+      <div class="heading">
+        <h2>Faraz<sup>™</sup></h2>
+      </div>
+      <div class="content">
+        <div class="services">
+          <h4>Services</h4>
+          <p><a href="#">App development</a></p>
+          <p><a href="#">Web development</a></p>
+          <p><a href="#">DevOps</a></p>
+          <p><a href="#">Web designing</a></p>
+        </div>
+        <div class="social-media">
+          <h4>Social</h4>
+          <p>
+            <a href="#"
+              ><i class="fab fa-linkedin"></i> Linkedin</a
+            >
+          </p>
+          <p>
+            <a href="#"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/farazc60"
+              ><i class="fab fa-github"></i> Github</a
+            >
+          </p>
+          <p>
+            <a href="https://www.facebook.com/codewithfaraz"
+              ><i class="fab fa-facebook"></i> Facebook</a
+            >
+          </p>
+          <p>
+            <a href="https://www.instagram.com/codewithfaraz"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </p>
+        </div>
+        <div class="links">
+          <h4>Quick links</h4>
+          <p><a href="#">Home</a></p>
+          <p><a href="#">About</a></p>
+          <p><a href="#">Blogs</a></p>
+          <p><a href="#">Contact</a></p>
+        </div>
+        <div class="details">
+          <h4 class="address">Address</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur <br />
+            adipisicing elit. Cupiditate, qui!
+          </p>
+          <h4 class="mobile">Mobile</h4>
+          <p><a href="#">+91-12225*****</a></p>
+          <h4 class="mail">Email</h4>
+          <p><a href="#">farazc60@gmail.com</a></p>
+        </div>
+      </div>
+      <footer>
+        <hr />
+        © 2022 codewithFaraz.
+      </footer>
+    </div>
+  </body>
+</html>

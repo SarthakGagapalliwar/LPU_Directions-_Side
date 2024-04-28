@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <div class="Full_upper">
+   
+    <!-- <h1 style="text-align: center; color: rgb(239, 8, 8); padding-top: 10px;">Enter your Source and Destination</h1> -->
+    <div id="container">
+        <span id="text1"></span>
+        <span id="text2"></span>
+    </div>
+    
+    <svg id="filters">
+        <defs>
+            <filter id="threshold">
+                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 255 -140" />
+            </filter>
+        </defs>
+    </svg>
+    
+    <div class="serach-box">
+        <div class="all-input">
+            <div class="rox">
+                <input type="text" id="input-box-1" placeholder="Enter Source" autocomplete="off">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="result-box" id="result-box-1">
+        </div>
+    </div>
+    
+    <div class="serach-box">
+        <div class="all-input">
+            <div class="rox">
+                <input type="text" id="input-box-2" placeholder="Enter Destination" autocomplete="off">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="result-box" id="result-box-2">
+        </div>
+    </div>
+    <button class="contactButton">Get Direction
+        <div class="iconButton">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+    </button>
+
+    
+         
+</div>
+    
+
+    <div class="footer">
+        <div class="footer_all">
+
+        <div class="footer_desc">
+            <h1>Easy to get direction from source to destination</h1>
+            <p>This section provide easy-to-foow direction from the source location to the destination</p>
+        </div>
+
+        <div class="contact_us">
+            <ul>
+                <li>
+                    <h2>Contact Us</h2>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location location"></i>
+                    <p>123 Main Street, Cityvilla,postal Code: <br>144411</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-phone phone"></i>
+                    <p>+91 9999999999</p>
+                </li>
+                <li>
+                    <i class="fa-regular fa-envelope"></i>
+                    <p>info@example.com</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="socal">
+        <p>
+            <a href="#" class="icon" id="facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </p>
+        <p>
+            <a href="#" class="icon" id="twitter">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </p>
+        <p>
+            <a href="#" class="icon" id="instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </p>
+        <p>
+            <a href="#" class="icon" id="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </p>
+        <p>
+            <a href="#" class="icon" id="telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+        </p>
+        </div>
+
+    </div>
+     </div>
+
+     <div class="full_portion">
+
+     <div class="bh1-34-7" id="bh1-34-7">
+        <button id="prev" onclick="prev()">Prev</button>
+           
+            
+                <img id="slide" src="" alt="Slide">
+                
+                
+                <button id="next" onclick="next()">Next</button>
+                
+                <div id="done">
+                    <button id="Done" onclick="done()">Done</button>
+                    
+                </div>
+            </div>
+            <div class="para_img">
+                <p id="caption"></p>
+            </div>
+
+        </div>
+     
+    </body>
+    <script src="input.js"></script>
+    <script src="https://kit.fontawesome.com/bf8d0a2d93.js" crossorigin="anonymous"></script>
+</html>
